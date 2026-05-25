@@ -6,19 +6,19 @@ const folderPath = './data'
         const stats = fs.statSync(folderPath)
         
         if (stats.isDirectory()) {
-            console.log('\nfolder (data) sudah tersedia!');
+            console.log(`\nfolder (${folderPath}) sudah tersedia!`);
         } else {
-            console.log('\nada file bernama (data), bukan folder!!');
-            console.log('tidak bisa men-generate folder, karena terdapat file dengan nama (data)');
+            console.log(`\nada file bernama (${folderPath}), bukan folder!!`);
+            console.log(`tidak bisa men-generate folder, karena terdapat file dengan nama (${folderPath})`);
         }
         
     } else {
-        console.log('\nfolder (data) dalam proses pembuatan');
+        console.log(`\nfolder (${folderPath}) dalam proses pembuatan`);
         
         setTimeout(() => {
             fs.mkdir(folderPath, {recursive: true}, (err) => {
                 if (err) throw err
-                console.log('\nfolder (data) berhasil dibuat!!');
+                console.log(`\nfolder (${folderPath}) berhasil dibuat!!`);
             })
         }, 2000)
     }
@@ -29,38 +29,61 @@ const dataPath = './data/daftar_tugas.json'
         const stats = fs.statSync(dataPath)
         
         if (stats.isFile()) {
-            console.log('file (daftar_tugas.json) sudah tersedia!');
+            console.log(`file (${dataPath}) sudah tersedia!`);
         } 
         
     } else {
-        console.log('file (daftar_tugas.json) dalam proses pembuatan');
+        console.log(`file (${dataPath}) dalam proses pembuatan`);
         
         setTimeout(() => {
             fs.writeFile(dataPath, '[]', 'utf-8', (err) => {
                 if (err) throw err
-                console.log('file (daftar_tugas.json) berhasil dibuat!!');
+                console.log(`file (${dataPath}) berhasil dibuat!!`);
             })
         }, 2500)
     }
 
-//! generate file (utils.js) 
-const filePath = './utils.js'
+
+//! generate folder (funct)
+const functPath = './funct'
+    if (fs.existsSync(functPath)) {
+        const stats = fs.statSync(functPath)
+        
+        if (stats.isDirectory()) {
+            console.log(`folder (${functPath}) sudah tersedia!`);
+        } else {
+            console.log(`\n ada file bernama (${functPath}), bukan folder!!`);
+            console.log(`tidak bisa men-generate folder, karena terdapat file bernama (${functPath})`);            
+        }
+    } else {
+        console.log(`folder (${functPath}) dalam proses pembuatan`);
+        
+        setTimeout(() => {
+            fs.mkdir(functPath, {recursive:true}, (err) => {
+                if (err) throw err
+                console.log(`folder (${functPath}) berhasil dibuat!!`);
+            })
+        }, 3000)
+    }
+
+//! generate file (process.js) 
+const filePath = './funct/process.js'
     if (fs.existsSync(filePath)) {
         const stats = fs.statSync(filePath)
         
         if (stats.isFile()) {
-            console.log('file (utils.js) sudah tersedia!');
+            console.log(`file (${filePath}) sudah tersedia!`);
         } 
         
     } else {
-        console.log('file (utils.js) dalam proses pembuatan');
+        console.log(`file (${filePath}) dalam proses pembuatan`);
         
         setTimeout(() => {
             fs.writeFile(filePath, '', 'utf-8', (err) => {
                 if (err) throw err
-                console.log('file (utils.js) berhasil dibuat!!');
+                console.log(`file (${filePath}) berhasil dibuat!!`);
             })
-        }, 3000)
+        }, 3500)
     }
 
 //! generate file (app.js)
@@ -69,15 +92,15 @@ const mainFile = './app.js'
         const stats = fs.statSync(mainFile)
 
         if (stats) {
-            console.log('file (app.js) sudah tersedia!');
+            console.log(`file (${mainFile}) sudah tersedia!`);
         }
     } else {
-        console.log('file (app.js) dalam proses pembuatan');
+        console.log(`file (${mainFile}) dalam proses pembuatan`);
         
         setTimeout(() => {
             fs.writeFile(mainFile, '', 'utf-8', (err) => {
                 if (err) throw err
-                console.log('file (app.js) berhasil dibuat!!');
+                console.log(`file (${mainFile}) berhasil dibuat!!`);
             })
-        }, 3500)
+        }, 4000)
     }
