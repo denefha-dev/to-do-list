@@ -7,8 +7,6 @@ const rl = readline.createInterface({
     output
 })
 
-const { closeProgram } = require('./close')
-
 // ======================================================
 
 const theQuestion = (question) => {
@@ -38,7 +36,6 @@ const saveCourse = ({
     fs.writeFileSync(dataPath, JSON.stringify(tugasUser,null,2))
     console.log(`\nHI ${nama}, tugas terbaru kamu berhasil disimpan!!`);
     
-    closeProgram()
 }
 
 module.exports = {

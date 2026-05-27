@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "nama": "Muhammad Denefha",
+    "univ": "Universitas IPWIJA",
+    "fakultas": "Sains & Kesehatan",
+    "prodi": "S1 - Informatika",
+    "nim": "202501110009",
+    "TUGAS": {
+      "kodeKelas": "IM251",
+      "matkul": "Statiska & Probabilitas",
+      "jumlahSoal": "5 soal",
+      "deadline": "14 - 30 Mei"
+    }
+  }
+]
