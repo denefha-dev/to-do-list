@@ -1,5 +1,4 @@
 const closeProgram = () => {
-    console.log('\nprogram selesai!!');
     process.exit(0)
 }
 

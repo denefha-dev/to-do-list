@@ -1,30 +1,8 @@
-
-const { theQuestion, saveCourse } = require('./funct/process')
+const { theQuestion } = require('./funct/process')
 const { closeProgram } = require('./funct/close')
+const { addCourse } = require('./funct/add')
 
-// const main = async () => {
-//     console.log('\n======================================');
-//     console.log('======= PENGELOLA TUGAS KULIAH =======');
-//     console.log('======================================');
-//     const nama = await theQuestion('Masukan nama anda: ')
-//     const univ = await theQuestion('Masukan universitas anda: ')
-//     const fakultas = await theQuestion('Masukan fakultas anda: ')
-//     const prodi = await theQuestion('Masukan prodi anda: ')
-//     const nim = await theQuestion('Masukan nim anda: ')
-//     const kodeKelas = await theQuestion('Masukan kode kelas: ')
-//     console.log('======================================');
-//     const matkul = await theQuestion('Masukan tugas mata kuliah: ')
-//     const jumlahSoal = await theQuestion('Masukan jumlah tugas: ')
-//     const deadline = await theQuestion('Masukan tanggal pengerjaan [contoh: 12 mei - 19 mei]: ')
-//     console.log('======================================');
-    
-//     saveCourse({
-//         nama, univ, fakultas, prodi, nim,
-//         TUGAS: { kodeKelas, matkul, jumlahSoal, deadline }
-//     })
-// }
-
-// main()
+// ==========================================
 
 async function program() {
     while (true) {
@@ -38,10 +16,12 @@ async function program() {
         console.log('5. Ubah Status Tugas');
         console.log('6. Exit');
         
+        console.log('====================================');
         let pilih = await theQuestion('Masukan Pilihan Program [1/2/3/4/5/6]: ')
+        console.log('------------------------------------');
 
         if (pilih == "1") {
-            console.log('memilih tambah tugas');
+            await addCourse()
         } else if (pilih == "2") {
             console.log('memilih lihat tugas');
         } else if (pilih == "3") {
@@ -51,6 +31,7 @@ async function program() {
         } else if (pilih == "5") {
             console.log('memilih ubah status tugas');
         } else if (pilih == "6") {
+            console.log('\nprogram selesai!');
             closeProgram()
         } else {
             console.log('pilihan program tidak ada!');

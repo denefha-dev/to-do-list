@@ -7,6 +7,8 @@ const rl = readline.createInterface({
     output
 })
 
+const { closeProgram } = require('./close')
+
 // ======================================================
 
 const theQuestion = (question) => {
@@ -21,21 +23,22 @@ const saveCourse = ({
         nama, univ, fakultas, prodi, nim, 
         TUGAS: { kodeKelas, matkul, jumlahSoal, deadline } }) => {
             
+    const dataPath = './data/daftar_tugas.json'
+
     const tugasKuliah = {
         nama, univ, fakultas, prodi, nim, 
         TUGAS: {
             kodeKelas, matkul, jumlahSoal, deadline
         }
     }
-    const fileBuffer = fs.readFileSync('./data/daftar_tugas.json', 'utf-8')
+    const fileBuffer = fs.readFileSync(dataPath, 'utf-8')
     const tugasUser = JSON.parse(fileBuffer)
     
     tugasUser.push(tugasKuliah)
-    fs.writeFile('./data/daftar_tugas.json', JSON.stringify(tugasUser,null,2), (err) => {
-        if (err) throw err
-        console.log(`\nHI ${nama}, tugas anda berhasil disimpan!!`);
-    })
-    rl.close()
+    fs.writeFileSync(dataPath, JSON.stringify(tugasUser,null,2))
+    console.log(`\nHI ${nama}, tugas terbaru kamu berhasil disimpan!!`);
+    
+    closeProgram()
 }
 
 module.exports = {
