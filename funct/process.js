@@ -40,5 +40,5 @@ const saveCourse = ({
 
 module.exports = {
     theQuestion,
-    saveCourse
+    saveCourse,
 }

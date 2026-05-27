@@ -86,6 +86,25 @@ const filePath = './funct/process.js'
         }, 3500)
     }
 
+//! generate file (close.js)
+const closePath = './funct/close.js' 
+    if (fs.existsSync(closePath)) {
+        const stats = fs.statSync(closePath)
+        
+        if (stats.isFile(closePath)) {
+            console.log(`file (${closePath}) sudah tersedia!`);
+        }
+    } else {
+        console.log(`file (${closePath}) dalam proses pembuatan`);
+        
+        setTimeout(() => {
+            fs.writeFile(closePath, '', 'utf-8', (err) => {
+                if (err) throw err
+                console.log(`file (${closePath}) berhasil dibuat!!`);
+            })
+        }, 4000)
+    }
+
 //! generate file (app.js)
 const mainFile = './app.js'  
     if (fs.existsSync(mainFile)) {
@@ -102,5 +121,5 @@ const mainFile = './app.js'
                 if (err) throw err
                 console.log(`file (${mainFile}) berhasil dibuat!!`);
             })
-        }, 4000)
+        }, 4500)
     }
