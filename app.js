@@ -1,5 +1,6 @@
 
 const { theQuestion, saveCourse } = require('./funct/process')
+const { closeProgram } = require('./funct/close')
 
 // const main = async () => {
 //     console.log('\n======================================');
@@ -50,7 +51,7 @@ async function program() {
         } else if (pilih == "5") {
             console.log('memilih ubah status tugas');
         } else if (pilih == "6") {
-            console.log('program selesai');
+            closeProgram()
         } else {
             console.log('pilihan program tidak ada!');
         }
