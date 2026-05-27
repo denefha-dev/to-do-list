@@ -14,6 +14,7 @@ const addCourse = async () => {
     const matkul = await theQuestion('Masukan tugas mata kuliah: ')
     const jumlahSoal = await theQuestion('Masukan jumlah tugas: ')
     const deadline = await theQuestion('Masukan tanggal pengerjaan [contoh: 12 mei - 19 mei]: ')    
+    console.log('===================================');
 
     saveCourse({
         nama, univ, fakultas, prodi, nim,

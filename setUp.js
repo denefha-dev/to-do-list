@@ -105,6 +105,7 @@ const closePath = './funct/close.js'
         }, 3600)
     }
 
+
 //! generate file (add.js) 
 const addPath = './funct/add.js'
     if (fs.existsSync(addPath)) {
@@ -122,6 +123,25 @@ const addPath = './funct/add.js'
                 console.log(`file (${addPath}) berhasil dibuat!!`);
             })
         }, 3700)
+    }
+
+//! generate file (view.js)
+const viewPath = './funct/view.js' 
+    if (fs.existsSync(viewPath)) {
+        const stats = fs.statSync(viewPath)
+        
+        if (stats.isFile(viewPath)) {
+            console.log(`file (${viewPath}) sudah tersedia!`);
+        }
+    } else {
+        console.log(`file (${viewPath}) dalam proses pembuatan`);
+        
+        setTimeout(() => {
+            fs.writeFile(viewPath, '', 'utf-8', (err) => {
+                if (err) throw err
+                console.log(`file (${viewPath}) berhasil dibuat!!`);
+            })
+        }, 3800)
     }
 
 //! generate file (app.js)
