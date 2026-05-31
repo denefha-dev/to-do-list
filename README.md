@@ -9,3 +9,18 @@ to-do-list
 └─ utils.js
 
 ```
+```
+to-do-list
+├─ README.md
+├─ app.js
+├─ data
+│  └─ daftar_tugas.json
+├─ funct
+│  ├─ add.js
+│  ├─ close.js
+│  ├─ process.js
+│  └─ view.js
+├─ package.json
+└─ setUp.js
+
+```
