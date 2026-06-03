@@ -24,7 +24,7 @@ async function program() {
         if (pilih == "1") {
             await addCourse()
         } else if (pilih == "2") {
-            viewCOurse()
+            await viewCOurse()
         } else if (pilih == "3") {
             console.log('memilih cari tugas');
         } else if (pilih == "4") {
@@ -35,7 +35,7 @@ async function program() {
             console.log('\nprogram selesai!');
             closeProgram()
         } else {
-            console.log('pilihan program tidak ada!');
+            console.log('\npilihan program tidak ada!');
         }
     }
 }

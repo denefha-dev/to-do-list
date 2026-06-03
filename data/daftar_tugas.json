@@ -1,15 +1,28 @@
 [
   {
-    "nama": "Muhammad Denefha",
-    "univ": "Universitas IPWIJA",
-    "fakultas": "Sains & Kesehatan",
-    "prodi": "S1 - Informatika",
+    "nama": "KOMARIAH",
+    "univ": "universitas ipwija",
+    "fakultas": "sains & kesehatan",
+    "prodi": "s1 - informatika",
     "nim": "202501110009",
     "TUGAS": {
       "kodeKelas": "IM251",
-      "matkul": "Statiska & Probabilitas",
-      "jumlahSoal": "5 soal",
-      "deadline": "14 - 30 Mei"
+      "matkul": "aplikasi komputer",
+      "jumlahSoal": "2 soal",
+      "deadline": "12 mei - 1 juni"
+    }
+  },
+  {
+    "nama": "MUHAMMAD DENEFHA",
+    "univ": "universitas ipwija",
+    "fakultas": "sains & kesehatan",
+    "prodi": "s1 - informatika",
+    "nim": "202501110009",
+    "TUGAS": {
+      "kodeKelas": "IM251",
+      "matkul": "struktur data & algoritma",
+      "jumlahSoal": "1 soal",
+      "deadline": "2 juni - 2 juni\\"
     }
   }
 ]
