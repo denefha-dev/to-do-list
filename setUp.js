@@ -1,164 +1,61 @@
 const fs = require('node:fs')
 
-//! generate folder (data)
-const folderPath = './data' 
+// ===== refactor function generate folder n file =====
+
+console.log('\n==========================================');
+console.log('====== PROGRAM GENERATE FILE/FOLDER ======');
+console.log('==========================================');
+
+const generateFolder = (folderPath) => {
     if (fs.existsSync(folderPath)) {
         const stats = fs.statSync(folderPath)
         
         if (stats.isDirectory()) {
-            console.log(`\nfolder (${folderPath}) sudah tersedia!`);
+            console.log(`folder (${folderPath}) sudah tersedia!!`);
+            
         } else {
-            console.log(`\nada file bernama (${folderPath}), bukan folder!!`);
+            console.log(`ada file bernama (${folderPath}), bukan folder`);
             console.log(`tidak bisa men-generate folder, karena terdapat file dengan nama (${folderPath})`);
         }
-        
     } else {
-        console.log(`\nfolder (${folderPath}) dalam proses pembuatan`);
+        console.log(`\nfolder (${folderPath}) dalam proses pembuatan!`);
         
-        setTimeout(() => {
-            fs.mkdir(folderPath, {recursive: true}, (err) => {
-                if (err) throw err
-                console.log(`\nfolder (${folderPath}) berhasil dibuat!!`);
-            })
-        }, 2000)
+        fs.mkdir(folderPath, { recursive:true }, (err) => {
+            if (err) throw err
+            
+            console.log(`folder (${folderPath}) berhasil dibuat!`);
+        })
     }
+}
 
-//! generate file (daftar_tugas.json) 
-const dataPath = './data/daftar_tugas.json'
-    if (fs.existsSync(dataPath)) {
-        const stats = fs.statSync(dataPath)
-        
-        if (stats.isFile()) {
-            console.log(`file (${dataPath}) sudah tersedia!`);
-        } 
-        
-    } else {
-        console.log(`file (${dataPath}) dalam proses pembuatan`);
-        
-        setTimeout(() => {
-            fs.writeFile(dataPath, '[]', 'utf-8', (err) => {
-                if (err) throw err
-                console.log(`file (${dataPath}) berhasil dibuat!!`);
-            })
-        }, 2500)
-    }
+generateFolder('./data')
+generateFolder('./funct')
 
 
-//! generate folder (funct)
-const functPath = './funct'
-    if (fs.existsSync(functPath)) {
-        const stats = fs.statSync(functPath)
-        
-        if (stats.isDirectory()) {
-            console.log(`folder (${functPath}) sudah tersedia!`);
-        } else {
-            console.log(`\n ada file bernama (${functPath}), bukan folder!!`);
-            console.log(`tidak bisa men-generate folder, karena terdapat file bernama (${functPath})`);            
-        }
-    } else {
-        console.log(`folder (${functPath}) dalam proses pembuatan`);
-        
-        setTimeout(() => {
-            fs.mkdir(functPath, {recursive:true}, (err) => {
-                if (err) throw err
-                console.log(`folder (${functPath}) berhasil dibuat!!`);
-            })
-        }, 3000)
-    }
-
-//! generate file (process.js) 
-const filePath = './funct/process.js'
+const generateFile = (filePath) => {
     if (fs.existsSync(filePath)) {
         const stats = fs.statSync(filePath)
         
         if (stats.isFile()) {
-            console.log(`file (${filePath}) sudah tersedia!`);
-        } 
-        
+            console.log(`file (${filePath}) sudah tersedia!!`);
+        }        
     } else {
         console.log(`file (${filePath}) dalam proses pembuatan`);
         
-        setTimeout(() => {
-            fs.writeFile(filePath, '', 'utf-8', (err) => {
-                if (err) throw err
-                console.log(`file (${filePath}) berhasil dibuat!!`);
-            })
-        }, 3500)
+        fs.writeFile(filePath, '', 'utf-8', (err) => {
+            if (err) throw err
+            console.log(`file (${filePath}) berhasil dibuat!!`);
+        })
     }
+}
 
-//! generate file (close.js)
-const closePath = './funct/close.js' 
-    if (fs.existsSync(closePath)) {
-        const stats = fs.statSync(closePath)
-        
-        if (stats.isFile(closePath)) {
-            console.log(`file (${closePath}) sudah tersedia!`);
-        }
-    } else {
-        console.log(`file (${closePath}) dalam proses pembuatan`);
-        
-        setTimeout(() => {
-            fs.writeFile(closePath, '', 'utf-8', (err) => {
-                if (err) throw err
-                console.log(`file (${closePath}) berhasil dibuat!!`);
-            })
-        }, 3600)
-    }
+generateFile('./data/daftar_tugas.json', '[]')
+generateFile('./funct/add.js')
+generateFile('./funct/close.js')
+generateFile('./funct/process.js')
+generateFile('./funct/view.js')
+generateFile('./funct/search.js')
 
+// ==== main file ====
+generateFile('./app.js')
 
-//! generate file (add.js) 
-const addPath = './funct/add.js'
-    if (fs.existsSync(addPath)) {
-        const stats = fs.statSync(addPath)
-        
-        if (stats.isFile(addPath)) {
-            console.log(`file (${addPath}) sudah tersedia!`);
-        }
-    } else {
-        console.log(`file (${addPath}) dalam proses pembuatan`);
-        
-        setTimeout(() => {
-            fs.writeFile(addPath, '', 'utf-8', (err) => {
-                if (err) throw err
-                console.log(`file (${addPath}) berhasil dibuat!!`);
-            })
-        }, 3700)
-    }
-
-//! generate file (view.js)
-const viewPath = './funct/view.js' 
-    if (fs.existsSync(viewPath)) {
-        const stats = fs.statSync(viewPath)
-        
-        if (stats.isFile(viewPath)) {
-            console.log(`file (${viewPath}) sudah tersedia!`);
-        }
-    } else {
-        console.log(`file (${viewPath}) dalam proses pembuatan`);
-        
-        setTimeout(() => {
-            fs.writeFile(viewPath, '', 'utf-8', (err) => {
-                if (err) throw err
-                console.log(`file (${viewPath}) berhasil dibuat!!`);
-            })
-        }, 3800)
-    }
-
-//! generate file (app.js)
-const mainFile = './app.js'  
-    if (fs.existsSync(mainFile)) {
-        const stats = fs.statSync(mainFile)
-
-        if (stats) {
-            console.log(`file (${mainFile}) sudah tersedia!`);
-        }
-    } else {
-        console.log(`file (${mainFile}) dalam proses pembuatan`);
-        
-        setTimeout(() => {
-            fs.writeFile(mainFile, '', 'utf-8', (err) => {
-                if (err) throw err
-                console.log(`file (${mainFile}) berhasil dibuat!!`);
-            })
-        }, 4000)
-    }
