@@ -8,8 +8,8 @@
     "TUGAS": {
       "kodeKelas": "IM251",
       "matkul": "aplikasi komputer",
-      "jumlahSoal": "2 soal",
-      "deadline": "12 mei - 1 juni"
+      "jumlahSoal": "1 soal",
+      "deadline": "1 - 12 mei"
     }
   },
   {
@@ -20,9 +20,9 @@
     "nim": "202501110009",
     "TUGAS": {
       "kodeKelas": "IM251",
-      "matkul": "struktur data & algoritma",
+      "matkul": "aplikasi komputer",
       "jumlahSoal": "1 soal",
-      "deadline": "2 juni - 2 juni\\"
+      "deadline": "1 - 12 mei"
     }
   }
 ]

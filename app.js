@@ -2,6 +2,7 @@ const { theQuestion } = require('./funct/process')
 const { closeProgram } = require('./funct/close')
 const { addCourse } = require('./funct/add')
 const { viewCOurse } = require('./funct/view')
+const { searchCourse } = require('./funct/search')
 
 // ==========================================
 
@@ -26,7 +27,7 @@ async function program() {
         } else if (pilih == "2") {
             await viewCOurse()
         } else if (pilih == "3") {
-            console.log('memilih cari tugas');
+            await searchCourse()
         } else if (pilih == "4") {
             console.log('memilih hapus tugas');
         } else if (pilih == "5") {

@@ -19,7 +19,7 @@ const viewCOurse = async () => {
         console.log('----------------------------------');
         
         seeCourse.forEach((item, index) => {
-            console.log(`No - ${index + 1} ${item.TUGAS.matkul}`);
+            console.log(`No - ${index + 1} ${item.TUGAS.matkul} ${item.nama}`);
         }) 
         console.log('==================================');
         
@@ -35,7 +35,7 @@ const viewCOurse = async () => {
             
             if (!tugas) {
                 console.log('\nNomor tugas tidak ditemukan!!');
-                return
+                continue
             } 
             
             console.log('\n========= DETAIL TUGAS MAHASISWA/I =========');
