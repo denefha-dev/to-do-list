@@ -31,12 +31,17 @@ const viewCOurse = async () => {
                 await theQuestion('Masukan nomor tugas: ')
             )
             
+            if (isNaN(nomor)) {
+                console.log('\nMasukan nomor berupa angka!!');
+                continue
+            }
+            
             const tugas = seeCourse[nomor -1]
             
             if (!tugas) {
                 console.log('\nNomor tugas tidak ditemukan!!');
                 continue
-            } 
+            }
             
             console.log('\n========= DETAIL TUGAS MAHASISWA/I =========');
             
