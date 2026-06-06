@@ -50,13 +50,19 @@ const generateFile = (filePath) => {
     }
 }
 
-generateFile('./data/daftar_tugas.json', '[]')
+// ==== services file ====
 generateFile('./services/add.js')
-generateFile('./services/close.js')
-generateFile('./services/process.js')
 generateFile('./services/view.js')
 generateFile('./services/search.js')
 generateFile('./services/delete.js')
+
+// ==== utils file ====
+generateFile('./utils/close.js')
+generateFile('./utils/process.js')
+generateFile('./utils/file.js')
+
+// ==== data file ====
+generateFile('./data/daftar_tugas.json', '[]')
 
 // ==== main file ====
 generateFile('./app.js')
