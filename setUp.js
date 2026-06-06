@@ -29,7 +29,8 @@ const generateFolder = (folderPath) => {
 }
 
 generateFolder('./data')
-generateFolder('./funct')
+generateFolder('./services')
+generateFolder('./utils')
 
 
 const generateFile = (filePath) => {
@@ -50,12 +51,12 @@ const generateFile = (filePath) => {
 }
 
 generateFile('./data/daftar_tugas.json', '[]')
-generateFile('./funct/add.js')
-generateFile('./funct/close.js')
-generateFile('./funct/process.js')
-generateFile('./funct/view.js')
-generateFile('./funct/search.js')
-generateFile('./funct/delete.js')
+generateFile('./services/add.js')
+generateFile('./services/close.js')
+generateFile('./services/process.js')
+generateFile('./services/view.js')
+generateFile('./services/search.js')
+generateFile('./services/delete.js')
 
 // ==== main file ====
 generateFile('./app.js')
