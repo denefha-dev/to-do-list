@@ -24,3 +24,22 @@ to-do-list
 └─ setUp.js
 
 ```
+```
+to-do-list
+├─ README.md
+├─ app.js
+├─ data
+│  └─ daftar_tugas.json
+├─ package-lock.json
+├─ package.json
+├─ services
+│  ├─ add.js
+│  ├─ delete.js
+│  ├─ search.js
+│  └─ view.js
+├─ setUp.js
+└─ utils
+   ├─ close.js
+   └─ process.js
+
+```
