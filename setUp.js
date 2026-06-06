@@ -55,6 +55,7 @@ generateFile('./funct/close.js')
 generateFile('./funct/process.js')
 generateFile('./funct/view.js')
 generateFile('./funct/search.js')
+generateFile('./funct/delete.js')
 
 // ==== main file ====
 generateFile('./app.js')
