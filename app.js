@@ -3,6 +3,7 @@ const { closeProgram } = require("./utils/close");
 const { addCourse } = require("./services/add");
 const { viewCOurse } = require("./services/view");
 const { searchCourse } = require("./services/search");
+const { deleteCourse } = require('./services/delete')
 
 // ==========================================
 
@@ -15,7 +16,7 @@ async function program() {
     console.log("2. Lihat Tugas");
     console.log("3. Cari Tugas");
     console.log("4. Hapus Tugas");
-    console.log("5. Ubah Status Tugas");
+    console.log("5. Ubah Tugas");
     console.log("6. Exit");
 
     console.log("====================================");
@@ -29,7 +30,7 @@ async function program() {
     } else if (pilih == "3") {
       await searchCourse();
     } else if (pilih == "4") {
-      console.log("memilih hapus tugas");
+      await deleteCourse()
     } else if (pilih == "5") {
       console.log("memilih ubah tugas");
     } else if (pilih == "6") {
