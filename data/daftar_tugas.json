@@ -4,12 +4,12 @@
     "univ": "universitas ipwija",
     "fakultas": "sains & kesehatan",
     "prodi": "s1 - informatika",
-    "nim": "202501110009",
+    "nim": "202501110033",
     "TUGAS": {
       "kodeKelas": "IM251",
       "matkul": "aplikasi komputer",
-      "jumlahSoal": "1 soal",
-      "deadline": "1 - 12 mei"
+      "jumlahSoal": "1",
+      "deadline": "12 - 31 mei"
     }
   },
   {
@@ -20,9 +20,9 @@
     "nim": "202501110009",
     "TUGAS": {
       "kodeKelas": "IM251",
-      "matkul": "aplikasi komputer",
-      "jumlahSoal": "1 soal",
-      "deadline": "1 - 12 mei"
+      "matkul": "struktur data & algoritma",
+      "jumlahSoal": "1",
+      "deadline": "1 - 1 juni"
     }
   }
 ]

@@ -1,12 +1,12 @@
 const fs = require("node:fs");
 const { theQuestion } = require("../utils/process");
+const { loadCourse } = require('../utils/file')
 
 // ===================================
 
 const viewCOurse = async () => {
   while (true) {
-    const fileCourse = fs.readFileSync("./data/daftar_tugas.json", "utf-8");
-    const seeCourse = JSON.parse(fileCourse);
+    const seeCourse = loadCourse()
 
     if (seeCourse.length === 0) {
       console.log("\ntidak ada tugas untuk saat ini!!");

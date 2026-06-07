@@ -31,7 +31,7 @@ async function program() {
     } else if (pilih == "4") {
       console.log("memilih hapus tugas");
     } else if (pilih == "5") {
-      console.log("memilih ubah status tugas");
+      console.log("memilih ubah tugas");
     } else if (pilih == "6") {
       console.log("\nprogram selesai!");
       closeProgram();

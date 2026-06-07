@@ -1,11 +1,15 @@
 const fs = require('node:fs')
 const readline = require('node:readline')
+
 const { stdin: input, stdout: output } = require('node:process')
 const { resolve } = require('node:dns')
 const rl = readline.createInterface({
     input, 
     output
 })
+
+// ==== local module ====
+const { loadCourse } = require('../utils/file')
 
 // ======================================================
 
@@ -21,7 +25,6 @@ const saveCourse = ({
         nama, univ, fakultas, prodi, nim, 
         TUGAS: { kodeKelas, matkul, jumlahSoal, deadline } }) => {
             
-    const dataPath = './data/daftar_tugas.json'
 
     const tugasKuliah = {
         nama, univ, fakultas, prodi, nim, 
@@ -29,9 +32,9 @@ const saveCourse = ({
             kodeKelas, matkul, jumlahSoal, deadline
         }
     }
-    const fileBuffer = fs.readFileSync(dataPath, 'utf-8')
-    const tugasUser = JSON.parse(fileBuffer)
-    
+    const tugasUser = loadCourse()
+    const dataPath = './data/daftar_tugas.json'
+
     tugasUser.push(tugasKuliah)
     fs.writeFileSync(dataPath, JSON.stringify(tugasUser,null,2))
     console.log(`\nHI ${nama}, tugas terbaru kamu berhasil disimpan!!`);
