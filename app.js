@@ -16,7 +16,7 @@ async function program() {
     console.log("2. Lihat Tugas");
     console.log("3. Cari Tugas");
     console.log("4. Hapus Tugas");
-    console.log("5. Ubah Tugas");
+    console.log("5. Ubah Data Tugas");
     console.log("6. Exit");
 
     console.log("====================================");
