@@ -26,10 +26,24 @@ const deleteCourse = async  () => {
             console.log('--------------------------------');
         })
         
+        
         console.log('\n===== HAPUS TUGAS MAHASISWA/I =====');
         console.log('-----------------------------------');    
         const nomor = Number( await theQuestion('Masukan nomor tugas: ') )
         console.log('-----------------------------------');  
+        
+        if (isNaN(nomor)) {
+            console.log('\nhanya bisa masukan angka!!');
+            continue
+        }
+        
+        const tugas = seeCourse[nomor - 1]
+        
+        if (!tugas) {
+            console.log('\nnomor tugas tidak ditemukan!!');
+            continue
+        }
+        
         console.log('detail tugas yang dihapus');
         console.log('-----------------------------------');  
         
@@ -44,21 +58,18 @@ const deleteCourse = async  () => {
             console.log(`Fakultas       : ${item.fakultas}`);
             console.log(`Prodi/Jurusan  : ${item.prodi}`);
         })
-        console.log('================================');
+        console.log('================================');        
         
-        if (isNaN(nomor)) {
-            console.log('\nhanya bisa masukan angka!!');
-            continue
-        }
+        const konfirmasi = (
+            await theQuestion('\nYakin ini Hapus tugas ini [y/n]: ')
+        ).toLowerCase()        
         
-        const tugas = seeCourse[nomor - 1]
+        if (konfirmasi !== "y") {
+            console.log('\npenghapusan dibatalkan!!');
+            return
+        }         
         
-        if (!tugas) {
-            console.log('\nnomor tugas tidak ditemukan!!');
-            continue
-        }
-        
-        seeCourse.splice(-1,1)
+        seeCourse.splice(nomor - 1, 1)
         fs.writeFileSync('./data/daftar_tugas.json', JSON.stringify(seeCourse, null, 2))
         
         console.log('\nTugas berhasil dihapus!');
