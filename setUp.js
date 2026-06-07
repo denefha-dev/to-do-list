@@ -55,6 +55,7 @@ generateFile('./services/add.js')
 generateFile('./services/view.js')
 generateFile('./services/search.js')
 generateFile('./services/delete.js')
+generateFile('./services/update.js')
 
 // ==== utils file ====
 generateFile('./utils/close.js')
