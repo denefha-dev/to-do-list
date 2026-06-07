@@ -53,8 +53,11 @@ const viewCOurse = async () => {
       console.log(`Prodi/Jurusan   : ${tugas.prodi}`);
       console.log(`NIM Mahasiswa/i : ${tugas.nim}`);
       console.log(`Kode Kelas      : ${tugas.TUGAS.kodeKelas}`);
-    } else {
-      break;
+    } else if (detail == "n") {
+      break
+    }else {
+      console.log('\nhanya bisa masukan [y/n]');
+      continue
     }
   }
 };
