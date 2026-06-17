@@ -10,6 +10,7 @@ to-do-list
 │  ├─ add.js
 │  ├─ delete.js
 │  ├─ search.js
+│  ├─ update.js
 │  └─ view.js
 ├─ setUp.js
 └─ utils
