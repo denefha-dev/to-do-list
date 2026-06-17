@@ -4,6 +4,7 @@ const { addCourse } = require("./services/add");
 const { viewCOurse } = require("./services/view");
 const { searchCourse } = require("./services/search");
 const { deleteCourse } = require('./services/delete')
+const { editCourse } = require('./services/update')
 
 // ==========================================
 
@@ -11,7 +12,7 @@ async function program() {
   while (true) {
     console.log("\n====================================");
     console.log("====== PENGELOLA TUGAS KAMPUS ======");
-    console.log("====================================");
+    console.log("====================================")
     console.log("1. Tambah Tugas");
     console.log("2. Lihat Tugas");
     console.log("3. Cari Tugas");
@@ -32,7 +33,7 @@ async function program() {
     } else if (pilih == "4") {
       await deleteCourse()
     } else if (pilih == "5") {
-      console.log("memilih ubah tugas");
+      await editCourse()
     } else if (pilih == "6") {
       console.log("\nprogram selesai!");
       closeProgram();

@@ -1,6 +1,9 @@
 const { loadCourse } = require('../utils/file')
 const { theQuestion } = require('../utils/process')
 
+// core module
+const fs = require('node:fs')
+
 // ===================================
 
 const editCourse = async () => {
@@ -37,7 +40,7 @@ const editCourse = async () => {
         const tugas = seeCourse[nomor - 1]
         
         if (!tugas) {
-            console.log('\Nomor tugas tidak ditemukan!');
+            console.log('\nomor tugas tidak ditemukan!');
             continue
         }
         
@@ -77,26 +80,89 @@ const editCourse = async () => {
                 console.log('\n===== MENGUBAH SEMUA DATA =====');
                 console.log('-------------------------------');
                 console.log(`Nama Mahasiswa/I: ${tugas.nama}`);
-                tugas.nama = await theQuestion('Masukan Nama Terbaru: ')
+                tugas.nama = (await theQuestion('Masukan Nama Terbaru: ')).toUpperCase()
                 
                 console.log(`\nUniversitas: ${tugas.univ}`);
-                tugas.univ = await theQuestion('Masukan Universitas Terbaru: ')
+                tugas.univ = (await theQuestion('Masukan Universitas Terbaru: ')).toLowerCase()
                 
                 console.log(`\nFakultas: ${tugas.fakultas}`);
-                tugas.fakultas = await theQuestion('Masukan Fakultas Terbaru: ')
+                tugas.fakultas = (await theQuestion('Masukan Fakultas Terbaru: ')).toLowerCase()
                 
                 console.log(`\nProdi: ${tugas.prodi}`);
-                tugas.prodi = await theQuestion('Masukan Prodi Terbaru: ')
+                tugas.prodi = (await theQuestion('Masukan Prodi Terbaru: ')).toLowerCase()
                 
                 console.log(`\nNIM: ${tugas.nim}`);
-                tugas.nim = await theQuestion('Masukan NIM Terbaru: ')
+                tugas.nim = (await theQuestion('Masukan NIM Terbaru: ')).toLowerCase()
                 
                 console.log(`\nKode Kelas: ${tugas.TUGAS.kodeKelas}`);
-                tugas.TUGAS.kodeKelas = await theQuestion('Masukan Kode Kelas Terbaru: ')
+                tugas.TUGAS.kodeKelas = (await theQuestion('Masukan Kode Kelas Terbaru: ')).toUpperCase()
                 
-                console.log();
+                console.log(`\nMata Kuliah: ${tugas.TUGAS.matkul}`);
+                tugas.TUGAS.matkul = (await theQuestion('Masukan Mata Kuliah Terbaru: ')).toLowerCase()
+                
+                console.log(`\nJumlah Soal: ${tugas.TUGAS.jumlahSoal}`);
+                tugas.TUGAS.jumlahSoal = (await theQuestion('Masukan Jumlah Soal Terbaru: ')).toLowerCase()
+                
+                console.log(`\nDeadline: ${tugas.TUGAS.deadline}`);
+                tugas.TUGAS.deadline = (await theQuestion('Masukan Deadline Terbaru: ')).toLowerCase()
+                break
+                
+            case 2:
+                console.log(`Mata Kuliah: ${tugas.TUGAS.matkul}`);
+                tugas.TUGAS.matkul = (await theQuestion('Masukan Mata Kuliah Terbaru: ')).toUpperCase()
+                break
+                
+            case 3:
+                console.log(`Jumlah Soal: ${tugas.TUGAS.jumlahSoal}`);
+                tugas.TUGAS.jumlahSoal = (await theQuestion('Masukan Jumlah Soal Terbaru: ')).toLowerCase()
+                break
+                
+            case 4:
+                console.log(`Tenggat Waktu: ${tugas.TUGAS.deadline}`);
+                tugas.TUGAS.deadline = (await theQuestion('Masukan Deadline Terbaru: ')).toLowerCase()                
+                break
+                
+            case 5:
+                console.log(`Pemilik Tugas: ${tugas.nama}`);
+                tugas.nama = (await theQuestion('Masukan Nama Terbaru: ')).toUpperCase()                
+                break
+                
+            case 6:
+                console.log(`Universitas: ${tugas.univ}`);
+                tugas.univ = (await theQuestion('Masukan Universitas Terbaru: ')).toLowerCase()                
+                break
+                
+            case 7:
+                console.log(`Fakultas: ${tugas.fakultas}`);
+                tugas.fakultas = (await theQuestion('Masukan Fakultas Terbaru: ')).toLowerCase()                
+                break
+                
+            case 8:
+                console.log(`Prodi: ${tugas.prodi}`);
+                tugas.prodi = (await theQuestion('Masukan Prodi Terbaru: ')).toLowerCase()                
+                break
+                
+            case 9:
+                console.log(`NIM: ${tugas.nim}`);
+                tugas.nim = (await theQuestion('Masukan NIM Terbaru: ')).toLowerCase()                
+                break
+                
+            case 10:
+                console.log(`Kode Kelas: ${tugas.TUGAS.kodeKelas}`);
+                tugas.TUGAS.kodeKelas = (await theQuestion('Masukan Kode Kelas Terbaru: ')).toUpperCase()                
+                break
+                
+            default:
+                console.log('\nMenu tidak tersedia!!, hanya 1 - 10');
+                continue
         }
+        
+        fs.writeFileSync('./data/daftar_tugas.json', JSON.stringify(seeCourse,null,2))
+        console.log('\ndata mahasiswa/i berhasil diubah, silahkan cek pada program lihat tugas');
+        break
     }
 }
 
-editCourse()
+module.exports = {
+    editCourse
+}

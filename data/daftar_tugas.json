@@ -1,18 +1,5 @@
 [
   {
-    "nama": "MUHAMMAD DENEFHA",
-    "univ": "universitas ipwija",
-    "fakultas": "sains & kesehatan",
-    "prodi": "s1 - informatika",
-    "nim": "202501110009",
-    "TUGAS": {
-      "kodeKelas": "IM251",
-      "matkul": "aplikasi komputer",
-      "jumlahSoal": "1",
-      "deadline": "10 - 17 juni"
-    }
-  },
-  {
     "nama": "KOMARIAH",
     "univ": "universitas ipwija",
     "fakultas": "sains & kesehatan",
@@ -20,9 +7,9 @@
     "nim": "202501110033",
     "TUGAS": {
       "kodeKelas": "IM251",
-      "matkul": "struktur data & algoritma",
-      "jumlahSoal": "2",
-      "deadline": "18 - 18 juni"
+      "matkul": "KALKULUS II",
+      "jumlahSoal": "1",
+      "deadline": "12 - 21 mei"
     }
   }
 ]
